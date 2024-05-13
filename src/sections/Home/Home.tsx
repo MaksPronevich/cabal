@@ -15,7 +15,7 @@ export const Home: FC = () => {
     <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0}>
       <motion.section className="flex min-h-screen px-4 pt-10 lg:px-12">
         <div className="flex w-full flex-col items-center justify-between gap-8 lg:flex-row lg:justify-center lg:gap-1">
-          <div className="min-h-[500px] max-w-[696px] text-center lg:my-[65px] lg:flex-[0_1_696px] lg:text-left">
+          <div className="min-h-[350px] max-w-[696px] text-center lg:my-[65px] lg:min-h-[500px] lg:flex-[0_1_696px] lg:text-left">
             <motion.h2
               className="mb-6 text-2xl uppercase lg:text-4xl 2xl:text-5xl"
               viewport={{ amount: 0.2, once: true }}
@@ -67,7 +67,7 @@ export const Home: FC = () => {
           </div>
 
           <motion.div
-            className="relative flex items-end self-end"
+            className="5xl:w-auto relative flex items-end self-end lg:w-[70%]"
             viewport={{ amount: 0.2, once: true }}
             variants={showAnimation}
             whileInView="visible"
