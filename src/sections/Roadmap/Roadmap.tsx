@@ -1,8 +1,11 @@
 import { FC } from "react";
+import { useChangeIcon } from "@/hooks";
 import roadmapImg from "@/assets/img/roadmap.png";
 import { MouseParallaxChild, MouseParallaxContainer } from "react-parallax-mouse";
 
 export const Roadmap: FC = () => {
+  const { iconIndex } = useChangeIcon(25, 1000);
+
   return (
     <section id="roadmap" className="section relative flex min-h-screen border-b px-4 [box-shadow:0_-110px_110px_#000]">
       <MouseParallaxContainer
@@ -13,7 +16,13 @@ export const Roadmap: FC = () => {
         <div className="flex items-center justify-center lg:flex-[0_1_50%] lg:pr-4">
           <div className="relative z-10 max-w-[560px] pt-5 text-center lg:text-left">
             <MouseParallaxChild factorX={-0.05} factorY={0.05}>
-              <img className="mb-6 inline-flex h-12 w-12" src="/icons/roadmap.svg" height={48} width={48} alt="Icon" />
+              <img
+                className="mb-6 inline-flex h-12 w-12"
+                src={`/icons/${iconIndex}.svg`}
+                height={48}
+                width={48}
+                alt="Icon"
+              />
             </MouseParallaxChild>
             <h2 className="mb-6 text-2xl uppercase lg:text-4xl 2xl:text-5xl">Roadmap</h2>
             <ul className="flex flex-col gap-4 text-left font-plex lg:gap-8">

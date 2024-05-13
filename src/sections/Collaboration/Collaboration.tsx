@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
+import { useChangeIcon } from "@/hooks";
 import { animationConfig } from "@/config";
 import collaborationImg from "@/assets/img/collaboration.png";
 import { MouseParallaxChild, MouseParallaxContainer } from "react-parallax-mouse";
 
 export const Collaboration: FC = () => {
   const { showAnimation } = animationConfig;
+  const { iconIndex } = useChangeIcon(25, 1000);
 
   return (
     <motion.section className="section relative flex min-h-screen items-center border-b px-4">
@@ -24,7 +26,13 @@ export const Collaboration: FC = () => {
             custom={1}
           >
             <MouseParallaxChild factorX={-0.05} factorY={0.05}>
-              <img className="mb-6 inline-flex h-12 w-12" src="/icons/2.svg" height={48} width={48} alt="Icon" />
+              <img
+                className="mb-6 inline-flex h-12 w-12"
+                src={`/icons/${iconIndex}.svg`}
+                height={48}
+                width={48}
+                alt="Icon"
+              />
             </MouseParallaxChild>
             <h2 className="mb-6 text-2xl uppercase lg:text-4xl 2xl:text-5xl">The Power of Collaboration</h2>
             <div className="text-left font-plex text-xs text-gray-200 lg:text-sm 2xl:text-base">

@@ -1,10 +1,12 @@
 import { FC } from "react";
+import { useChangeIcon } from "@/hooks";
 import { configuration } from "@/config";
 import tokenomicsImg from "@/assets/img/tokenomics.png";
 import { MouseParallaxChild, MouseParallaxContainer } from "react-parallax-mouse";
 
 export const Tokenomics: FC = () => {
   const { nftEthPrice, mintNftCount } = configuration;
+  const { iconIndex } = useChangeIcon(25, 1000);
 
   return (
     <section
@@ -21,7 +23,7 @@ export const Tokenomics: FC = () => {
             <MouseParallaxChild factorX={-0.05} factorY={0.05}>
               <img
                 className="mb-6 inline-flex h-12 w-12"
-                src="/icons/tokenomics.svg"
+                src={`/icons/${iconIndex}.svg`}
                 height={48}
                 width={48}
                 alt="Icon"

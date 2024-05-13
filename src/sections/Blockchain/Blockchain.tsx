@@ -13,7 +13,7 @@ export const Blockchain: FC = () => {
   return (
     <motion.section id="about" className="relative flex justify-center overflow-x-hidden border-y" ref={ref}>
       <motion.div
-        className="px-4 pb-[120px] pt-8 text-center sm:max-w-[650px] lg:max-w-[974px] lg:py-[250px]"
+        className="max-w-[400px] px-4 pb-[120px] pt-8 text-center lg:max-w-[650px] lg:py-[250px] xl:max-w-[974px]"
         viewport={{ amount: 0.5, once: true }}
         variants={showAnimation}
         whileInView="visible"
@@ -31,14 +31,14 @@ export const Blockchain: FC = () => {
         </div>
       </motion.div>
       <div
+        className="5xl:left-[16%] 3xl:left-[10%] absolute bottom-0 w-[65%] sm:w-[45%] lg:w-full"
         style={{ transform: `translateX(-${visibilityPercentage * 4}px)` }}
-        className="absolute bottom-0 left-0 w-[80%]"
       >
         <img className="bg-black [box-shadow:50px_0_50px_#090909]" src={daoLeftImg} alt="DAO" />
       </div>
       <div
+        className="5xl:right-[16%] 3xl:right-[10%] absolute bottom-0 flex w-[65%] justify-end sm:w-[45%] lg:w-full"
         style={{ transform: `translateX(${visibilityPercentage * 4}px)` }}
-        className="absolute bottom-0 right-0 flex w-[80%] justify-end"
       >
         <img className="bg-black [box-shadow:-50px_0_50px_#090909]" src={daoRightImg} alt="DAO" />
       </div>
