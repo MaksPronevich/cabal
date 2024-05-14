@@ -6,7 +6,7 @@ import daoRightImg from "@/assets/img/dao-right.png";
 import { useChangeIcon, useSectionVisibility } from "@/hooks";
 
 export const Blockchain: FC = () => {
-  const { iconIndex } = useChangeIcon(25, 1000);
+  const { iconIndex } = useChangeIcon(25, 500);
   const { ref, visibilityPercentage } = useSectionVisibility();
   const { showAnimation } = animationConfig;
 
@@ -31,16 +31,16 @@ export const Blockchain: FC = () => {
         </div>
       </motion.div>
       <div
-        className="5xl:left-[16%] 3xl:left-[10%] absolute bottom-0 w-[65%] sm:w-[45%] lg:w-full"
+        className="absolute bottom-0 w-[65%] sm:w-[45%] lg:w-full 3xl:left-[10%] 5xl:left-[16%]"
         style={{ transform: `translateX(-${visibilityPercentage * 4}px)` }}
       >
-        <img className="bg-black [box-shadow:50px_0_50px_#090909]" src={daoLeftImg} alt="DAO" />
+        <img className="rounded-tr-3xl bg-black [box-shadow:50px_-60px_50px_#090909]" src={daoLeftImg} alt="DAO" />
       </div>
       <div
-        className="5xl:right-[16%] 3xl:right-[10%] absolute bottom-0 flex w-[65%] justify-end sm:w-[45%] lg:w-full"
+        className="absolute bottom-0 flex w-[65%] justify-end sm:w-[45%] lg:w-full 3xl:right-[10%] 5xl:right-[16%]"
         style={{ transform: `translateX(${visibilityPercentage * 4}px)` }}
       >
-        <img className="bg-black [box-shadow:-50px_0_50px_#090909]" src={daoRightImg} alt="DAO" />
+        <img className="rounded-tl-3xl bg-black [box-shadow:-50px_-60px_50px_#090909]" src={daoRightImg} alt="DAO" />
       </div>
     </motion.section>
   );
